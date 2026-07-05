@@ -4,12 +4,12 @@
 
 @layer base {
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-  body { @apply bg-background text-ink font-body; overflow-x: hidden; }
-  ::selection { background-color: #10B981; color: #050706; }
+  body { @apply bg-sand text-ink-warm font-gsans; overflow-x: hidden; }
+  ::selection { background-color: #0E7C52; color: #F6F1E7; }
   ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: #0A0C0B; }
-  ::-webkit-scrollbar-thumb { background: #22302A; border-radius: 10px; }
-  ::-webkit-scrollbar-thumb:hover { background: #10B981; }
+  ::-webkit-scrollbar-track { background: #F6F1E7; }
+  ::-webkit-scrollbar-thumb { background: #E4DCC8; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #0E7C52; }
 }
 
 @layer components {
