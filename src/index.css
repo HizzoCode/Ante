@@ -99,3 +99,10 @@
   85%  { opacity: 1; }
   100% { transform: translateX(320%); opacity: 0; }
 }
+
+/* ------------------------------- draft v2 -------------------------------- */
+
+@keyframes v2-pot-glow {
+  0%, 100% { box-shadow: 0 0 30px -6px rgba(16, 185, 129, 0.35); }
+  50%      { box-shadow: 0 0 55px -6px rgba(16, 185, 129, 0.6); }
+}

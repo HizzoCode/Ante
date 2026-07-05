@@ -970,6 +970,10 @@ const FAQS = [
     a: 'A small cut of squad pots and an optional membership — the way a poker room charges the table, not the loser. We make money when you play, not when you fail.',
   },
   {
+    q: 'Where does the money go if I fail solo?',
+    a: 'Never to us. Before you start, you pick where solo forfeits go — a charity, or better, an anti-charity: a cause you’d hate to fund. Sleep through your 6AM run and your €50 goes to your rival football club’s youth academy. Suddenly the alarm works. (Squad forfeits always go to your squad.)',
+  },
+  {
     q: 'What stops someone from faking proof?',
     a: 'Fresh-capture photo requirements, metadata checks, and AI that’s seen every trick. Also: cheating your own gym pot is a genuinely sad thing to do to yourself.',
   },
