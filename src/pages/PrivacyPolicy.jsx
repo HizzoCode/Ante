@@ -15,7 +15,7 @@ const SECTIONS = [
   },
   {
     h: 'Contact',
-    p: 'Questions or deletion requests: hello@ante.app.',
+    p: 'Questions or deletion requests: reply to any waitlist email and we\'ll handle it. A permanent contact address arrives with our domain.',
   },
 ]
 

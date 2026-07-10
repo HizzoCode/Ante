@@ -237,7 +237,7 @@ function GymWide() {
 function RunWide() {
   return (
     <svg viewBox="0 0 360 140" preserveAspectRatio="xMidYMid slice" className="block h-full w-full" aria-hidden="true">
-      <rect width="360" height="140" fill="#10151A" />
+      <rect width="360" height="140" fill="#121411" />
       {/* street grid */}
       {[20, 55, 90, 125].map((y) => (
         <line key={`h${y}`} x1="0" y1={y} x2="360" y2={y} stroke="rgba(242,245,243,0.07)" strokeWidth="3" />
@@ -255,16 +255,16 @@ function RunWide() {
       <path
         d="M36 118 L130 118 L130 74 L200 74 L200 38 L270 38 L270 74 L306 74"
         fill="none"
-        stroke="#34D399"
+        stroke="#5FC79E"
         strokeWidth="4.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <circle cx="36" cy="118" r="6.5" fill="#DFAF5F" stroke="#0B0E0B" strokeWidth="2" />
       {/* end pin */}
-      <circle cx="306" cy="68" r="8" fill="#10B981" stroke="#0B0E0B" strokeWidth="2" />
+      <circle cx="306" cy="68" r="8" fill="#149E70" stroke="#0B0E0B" strokeWidth="2" />
       <circle cx="306" cy="68" r="2.8" fill="#0B0E0B" />
-      <path d="M306 76 l-4.5 8 h9 z" fill="#10B981" />
+      <path d="M306 76 l-4.5 8 h9 z" fill="#149E70" />
     </svg>
   )
 }
@@ -272,7 +272,7 @@ function RunWide() {
 function ScreenWide() {
   return (
     <svg viewBox="0 0 360 140" preserveAspectRatio="xMidYMid slice" className="block h-full w-full" aria-hidden="true">
-      <rect width="360" height="140" fill="#101116" />
+      <rect width="360" height="140" fill="#131210" />
       <text x="18" y="34" fill="rgba(242,245,243,0.55)" fontSize="10" letterSpacing="2" fontFamily="JetBrains Mono, monospace">SCREEN TIME · THURSDAY</text>
       <text x="18" y="62" fill="#F2F5F3" fontSize="24" fontWeight="700" fontFamily="JetBrains Mono, monospace">2h 38m</text>
       <text x="18" y="78" fill="rgba(242,245,243,0.4)" fontSize="9" fontFamily="JetBrains Mono, monospace">38m over your limit</text>
@@ -281,8 +281,8 @@ function ScreenWide() {
         [206, 34, false], [228, 22, false], [250, 40, false], [272, 62, true], [294, 30, false], [316, 26, false], [338, 14, false],
       ].map(([x, h, over]) => (
         <g key={x}>
-          <rect x={x} y={118 - h} width="14" height={h} rx="3" fill={over ? '#EF4444' : '#3B82F6'} opacity={over ? 1 : 0.65} />
-          <rect x={x} y={118 - h} width="14" height={Math.max(4, h * 0.35)} rx="3" fill={over ? '#F87171' : '#60A5FA'} opacity={over ? 1 : 0.7} />
+          <rect x={x} y={118 - h} width="14" height={h} rx="3" fill={over ? '#EF4444' : 'rgba(245,243,236,0.45)'} opacity={over ? 1 : 0.65} />
+          <rect x={x} y={118 - h} width="14" height={Math.max(4, h * 0.35)} rx="3" fill={over ? '#F87171' : 'rgba(245,243,236,0.6)'} opacity={over ? 1 : 0.7} />
         </g>
       ))}
       <line x1="198" y1="70" x2="352" y2="70" stroke="#EF4444" strokeWidth="1.5" strokeDasharray="5 4" />
@@ -303,7 +303,7 @@ function Scene({ kind }) {
 
 function PhoneShell({ children, className = '' }) {
   return (
-    <div className={`relative w-[272px] shrink-0 rounded-[2.7rem] bg-[#171B18] p-2 shadow-[0_36px_70px_-24px_rgba(62,52,30,0.45)] ${className}`}>
+    <div className={`relative w-[272px] shrink-0 rounded-[2.7rem] bg-[#1B1813] p-2 shadow-[0_36px_70px_-24px_rgba(62,52,30,0.45)] ${className}`}>
       <div className="relative flex h-[560px] flex-col overflow-hidden rounded-[2.1rem] bg-deep">
         <div className="relative flex items-center justify-between px-6 pb-1 pt-3 font-mono text-[9px] text-ink/60">
           <span>09:41</span>
@@ -364,7 +364,7 @@ function ScreenToday() {
         </span>
       </div>
 
-      <div className="mt-3 rounded-2xl border border-primary/25 bg-gradient-to-b from-[#0E1712] to-[#0A0F0C] p-4" style={{ animation: prefersReducedMotion ? 'none' : 'v2-pot-glow 4s ease-in-out infinite' }}>
+      <div className="mt-3 rounded-2xl border border-primary/25 bg-gradient-to-b from-[#12140C] to-[#0D0C08] p-4" style={{ animation: prefersReducedMotion ? 'none' : 'v2-pot-glow 4s ease-in-out infinite' }}>
         <div className="flex items-center justify-between">
           <p className="font-mono text-[8px] uppercase tracking-[0.22em] text-primary-light/80">Active contract</p>
           <span className="rounded-full border border-loss/40 bg-loss/10 px-2 py-0.5 font-mono text-[8px] tracking-[0.12em] text-loss">€50 AT RISK</span>
@@ -416,7 +416,7 @@ function ScreenToday() {
 function ScreenStake() {
   return (
     <div className="flex flex-1 flex-col px-4 pb-8 pt-3">
-      <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-muted">New ante</p>
+      <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-muted">New stake</p>
       <p className="mt-1 font-clash text-lg font-semibold leading-tight text-ink">Make it hurt a little.</p>
 
       <div className="mt-3 flex gap-1.5 overflow-hidden">
@@ -470,8 +470,8 @@ function ScreenStake() {
       </div>
 
       <div className="mt-auto space-y-2 pt-3">
-        <p className="text-center font-mono text-[7px] uppercase tracking-[0.2em] text-muted/70">House rule: stakes are capped — pain, not ruin</p>
-        <ScreenBtn>Ante up €50</ScreenBtn>
+        <p className="text-center font-mono text-[7px] uppercase tracking-[0.2em] text-muted/70">Ground rule: stakes are capped — pain, not ruin</p>
+        <ScreenBtn>Stake €50</ScreenBtn>
       </div>
     </div>
   )
@@ -526,7 +526,7 @@ function ScreenPayout() {
   return (
     <div className="flex flex-1 flex-col px-4 pb-8 pt-3">
       <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-muted">Sunday 20:00 — settlement</p>
-      <p className="mt-1 font-clash text-lg font-semibold text-ink">The table pays.</p>
+      <p className="mt-1 font-clash text-lg font-semibold text-ink">Winners get paid.</p>
 
       <div className="relative mt-3 bg-paper px-4 pb-3 pt-4 font-mono text-[9px] text-paper-ink">
         <p className="text-center text-[10px] font-bold tracking-[0.4em]">ANTE</p>
@@ -544,7 +544,7 @@ function ScreenPayout() {
           </div>
         ))}
         <div className="my-2.5 border-b border-dashed border-paper-ink/25" />
-        <p className="text-[7px] tracking-[0.2em] text-paper-muted">RECEIPTS SENT TO SQUAD CHAT · ANTE.APP</p>
+        <p className="text-[7px] tracking-[0.2em] text-paper-muted">RECEIPTS SENT TO SQUAD CHAT</p>
         <span className="absolute -right-1 top-10 rotate-[10deg] rounded border-2 border-primary-dark px-2 py-0.5 text-[9px] font-bold tracking-[0.15em] text-primary-dark">
           SETTLED
         </span>
@@ -562,7 +562,7 @@ function ScreenPayout() {
       </div>
 
       <div className="mt-auto space-y-2 pt-3">
-        <ScreenBtn>Rack up again — Monday</ScreenBtn>
+        <ScreenBtn>Stake again — Monday</ScreenBtn>
         <ScreenBtn ghost>Share the receipt</ScreenBtn>
       </div>
     </div>
@@ -616,9 +616,6 @@ function Hero() {
         </div>
 
         <div className="hero-phone relative flex justify-center lg:col-span-5 lg:justify-end">
-          <div className="absolute -left-4 top-8 hidden h-14 w-14 rotate-[-12deg] items-center justify-center rounded-full border-2 border-dashed border-gold-dark/40 font-clash text-sm font-semibold text-gold-dark xl:flex">
-            €50
-          </div>
           <PhoneShell className="lg:rotate-2">
             <ScreenToday />
           </PhoneShell>
@@ -645,7 +642,7 @@ function Ticker() {
     <section className="relative overflow-hidden border-y border-line-warm bg-sand-card py-3">
       <div className="flex max-w-full items-center">
         <span className="relative z-10 ml-4 mr-6 shrink-0 whitespace-nowrap rounded-full border border-line-warm bg-sand px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-warm sm:ml-8">
-          From the table — simulated · you're early
+          Simulated demo · you're early
         </span>
         <div className="relative flex-1 overflow-hidden">
           <div className="ticker-track">
@@ -669,7 +666,7 @@ function Ticker() {
 const STEPS = [
   {
     n: '01',
-    title: 'Ante up.',
+    title: 'Put money on it.',
     text: 'Pick the habit, the stake, and the squad. Gym four times a week, €50 each, you and three friends — the pot locks Monday morning.',
     bullets: ['Any habit, any proof, any stake', 'Stakes capped — pain, not ruin', 'Solo mode: you vs. you'],
     Screen: ScreenStake,
@@ -685,7 +682,7 @@ const STEPS = [
     n: '03',
     title: 'Sunday pays.',
     text: 'Finish the week and you keep your stake — plus a split of whatever the slackers left behind. Every result prints a receipt.',
-    bullets: ['Winners split to the cent', 'Receipts hit the squad chat', 'New table opens Monday'],
+    bullets: ['Winners split to the cent', 'Receipts hit the squad chat', 'New pot opens Monday'],
     Screen: ScreenPayout,
   },
 ]
@@ -715,7 +712,7 @@ function HowItWorks() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-warm">{s.text}</p>
                 <ul className="mt-5 space-y-2">
                   {s.bullets.map((b) => (
-                    <li key={b} className="flex items-center gap-2.5 font-mono text-xs text-muted-warm">
+                    <li key={b} className="flex items-center gap-2.5 text-sm text-muted-warm">
                       <Check className="h-3.5 w-3.5 shrink-0 text-pine" /> {b}
                     </li>
                   ))}
@@ -732,7 +729,7 @@ function HowItWorks() {
 /* ----------------------------- week at the table ---------------------------- */
 
 const CHAT = [
-  { sys: 'Monday — table opens. 4 players anted €50. Pot €200 locked till Sunday 20:00.' },
+  { sys: 'Monday — the pot opens. 4 friends stake €50 each. €200 locked till Sunday 20:00.' },
   { from: 'AN', name: 'Ana', time: 'Tue 06:58', scene: 'gym-wide', stat: 'IRON TEMPLE GYM · 06:58', caption: 'done. never speak to me before 8am', verified: true, react: '🔥 3' },
   { from: 'LU', name: 'Luka', time: 'Tue 07:12', scene: 'run-wide', stat: '5.2 KM · 31:42', caption: 'legs are officially a rumor', verified: true, react: '👟 2' },
   { from: 'IV', name: 'Ivan', time: 'Wed 21:14', scene: 'screen-wide', caption: 'ok this one hurts', receipt: 'FORFEIT −€5 — 38 MIN TIKTOK OVERTIME', react: '💀 2' },
@@ -746,7 +743,7 @@ function ChatCard() {
       <div className="mb-4 flex items-center justify-between border-b border-line-warm pb-4">
         <div>
           <p className="font-clash text-base font-semibold text-ink-warm">Leg Day Liars</p>
-          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-warm">4 players · week 27</p>
+          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-warm">4 friends · week 27</p>
         </div>
         <span className="rounded-full border border-gold-dark/40 bg-gold/10 px-3 py-1 font-mono text-[10px] font-bold text-gold-dark">POT €200</span>
       </div>
@@ -816,7 +813,7 @@ function WeekAtTheTable() {
         <div className="rise lg:sticky lg:top-32">
           <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-pine">The squad chat</p>
           <h2 className="font-clash text-4xl font-semibold tracking-tight text-ink-warm sm:text-5xl">
-            A week at <em className="font-editorial font-normal italic text-pine">the table.</em>
+            One week, <em className="font-editorial font-normal italic text-pine">one pot.</em>
           </h2>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-warm">
             Every proof, every excuse, every cent lands in the squad chat — verified before it
@@ -827,7 +824,7 @@ function WeekAtTheTable() {
             href="#waitlist"
             className="mt-9 inline-flex items-center gap-2 rounded-full bg-ink-warm px-6 py-3.5 text-sm font-medium text-sand transition-colors hover:bg-pine"
           >
-            Get a seat at the table <ArrowUpRight className="h-4 w-4" />
+            Get early access <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
         <div className="rise flex justify-center lg:justify-end">
@@ -922,9 +919,9 @@ function SoloMode() {
             {[
               'You pick the destination up front — locked, no takebacks',
               'Ante keeps €0.00 of forfeits — solo or squad, ever',
-              'We only earn when you play: a small table rake + membership',
+              'We only earn when you play: a small pot fee + membership',
             ].map((b) => (
-              <li key={b} className="flex items-start gap-2.5 font-mono text-xs leading-relaxed text-muted-warm">
+              <li key={b} className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-warm">
                 <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-pine" /> {b}
               </li>
             ))}
@@ -970,15 +967,15 @@ function CountUp({ end, suffix = '', duration = 2000 }) {
 }
 
 const NUMBERS = [
-  { label: 'Loss aversion', end: 2, suffix: '×', accent: true, text: 'Losing €50 hurts about twice as much as winning €50 feels good. Every casino runs on it — now it works for you.' },
-  { label: 'With money staked', end: 90, suffix: '%+', accent: true, text: 'Follow-through reported across money-staked goal apps. Skin in the game finishes what motivation starts.' },
-  { label: 'Without stakes', end: 20, suffix: '%', accent: false, text: 'Roughly where free habit trackers land. A gray square costs nothing — so it changes nothing.' },
+  { label: 'Why losses work', end: 2, suffix: '×', accent: true, text: 'Losing €50 stings about twice as much as winning €50 feels good (Kahneman & Tversky, 1979). We just point that at your gym schedule.' },
+  { label: 'With money on the line', end: 94, suffix: '%', accent: true, text: 'Goals completed on Forfeit, the biggest money-staking app — across 686,000+ real stakes. Yale\'s stickK found stakes roughly triple success rates.' },
+  { label: 'Without stakes', end: 20, suffix: '%', accent: false, text: 'Roughly where free habit trackers land. A broken streak costs nothing — so it changes nothing.' },
 ]
 
 const RULES = [
-  { icon: Scale, title: 'You are the house', text: 'No dice, no odds, no chance. Whether you lose is decided entirely by whether you show up — which is exactly why this isn\'t gambling. 18+ anyway.' },
+  { icon: Scale, title: 'No luck involved', text: 'No dice, no odds, no chance. Whether you lose is decided entirely by whether you show up — which is exactly why this isn\'t gambling. 18+ anyway.' },
   { icon: ShieldCheck, title: 'Humans before charges', text: 'AI verifies, but every rejection can be appealed to a person before a cent moves. We never charge silently.' },
-  { icon: Handshake, title: 'We charge the table, not the loser', text: 'A small rake on pots plus an optional membership. We make money when you play — not when you fail. We\'d rather you win.' },
+  { icon: Handshake, title: 'We never keep lost money', text: 'Lost stakes go to your squad or your chosen cause — never to us. We earn a small fee per pot plus an optional membership, so we only win when you play.' },
 ]
 
 function WhyItWorks() {
@@ -988,7 +985,7 @@ function WhyItWorks() {
         <div className="rise max-w-2xl">
           <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-pine">Why it works</p>
           <h2 className="font-clash text-4xl font-semibold tracking-tight text-ink-warm sm:text-5xl">
-            Casino mechanics, <em className="font-editorial font-normal italic text-pine">gym outcomes.</em>
+            Losing money is <em className="font-editorial font-normal italic text-pine">a better coach</em> than motivation.
           </h2>
         </div>
 
@@ -1017,7 +1014,7 @@ function WhyItWorks() {
         </div>
 
         <p className="rise mt-12 max-w-2xl font-mono text-[10px] leading-relaxed text-muted-warm/70">
-          Loss aversion ≈ 2×: Kahneman & Tversky (1979). Completion rates as reported across money-staked goal apps — we'll publish our own after beta.
+          Sources: loss aversion ≈ 2× — Kahneman & Tversky (1979). 94% — Forfeit's published success rate across 686k+ stakes (2026). Stakes ≈ 3× success — stickK (Yale) commitment-contract data. We'll publish Ante's own numbers after beta.
         </p>
       </div>
     </section>
@@ -1079,7 +1076,7 @@ function Contracts() {
 const FAQS = [
   {
     q: 'Is this gambling?',
-    a: 'No. Gambling needs chance. There\'s none here — whether you lose money is 100% decided by whether you do the thing you said you\'d do. You are the house. 18+, not available where prohibited.',
+    a: 'No. Gambling needs chance. There\'s none here — whether you lose money is 100% decided by whether you do the thing you said you\'d do. 18+, not available where prohibited.',
   },
   {
     q: 'What if I did the habit but the AI rejects my proof?',
@@ -1087,7 +1084,7 @@ const FAQS = [
   },
   {
     q: 'How does Ante make money?',
-    a: 'A small cut of squad pots and an optional membership — the way a poker room charges the table, not the loser. We make money when you play, not when you fail.',
+    a: 'A small fee on squad pots and an optional membership. We make money when you play, not when you fail — forfeited stakes never come to us.',
   },
   {
     q: 'Where does the money go if I fail solo?',
@@ -1266,7 +1263,7 @@ function WaitlistForm({ compact = false }) {
       </button>
       {status === 'error' && (
         <p className="flex items-center gap-1.5 text-xs text-loss-dark">
-          <AlertTriangle className="h-3.5 w-3.5" /> Something broke — try again, or email hello@ante.app.
+          <AlertTriangle className="h-3.5 w-3.5" /> Something broke — please try again in a moment.
         </p>
       )}
       <p className="text-[11px] leading-relaxed text-muted-warm/70">No spam, no sharing — launch updates only. Unsubscribe anytime.</p>
